@@ -12,6 +12,10 @@ from security import hash_password, verify_password, create_access_token, decode
 
 load_dotenv()
 
+FLASK_HOST = os.getenv("FLASK_HOST")
+FLASK_PORT = os.getenv("FLASK_PORT")
+FLASK_DEBUG = bool(os.getenv("FLASK_DEBUG", "False"))
+
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 
@@ -115,6 +119,7 @@ def create_post():
 
 
 if __name__ == "__main__":
-    drop_db()
+    if FLASK_DEBUG == True:
+        drop_db()
     init_db()
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host=FLASK_HOST, port=FLASK_PORT, debug=FLASK_DEBUG)
