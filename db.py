@@ -38,6 +38,13 @@ def init_db():
             cur.execute(schema)
         conn.commit()
 
+def drop_db():
+    query = "DROP TABLE posts; DROP TABLE users;"
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(query)
+        conn.commit()
+
 
 def create_user(username: str, password_hash: str) -> Optional[int]:
     try:

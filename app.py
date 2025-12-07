@@ -6,7 +6,8 @@ from typing import Callable, Any
 from flask import Flask, jsonify, request, g
 from dotenv import load_dotenv
 
-from db import init_db, create_user, get_user_by_username, get_posts_by_user_id, create_post as create_post_in_db
+from db import init_db, create_user, get_user_by_username, get_posts_by_user_id, create_post as create_post_in_db, \
+    drop_db
 from security import hash_password, verify_password, create_access_token, decode_access_token
 
 load_dotenv()
@@ -114,5 +115,6 @@ def create_post():
 
 
 if __name__ == "__main__":
+    drop_db()
     init_db()
     app.run(host="0.0.0.0", port=5000, debug=True)
