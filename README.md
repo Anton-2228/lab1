@@ -74,10 +74,10 @@ curl -X POST http://localhost:5000/api/data \
 ## CI/CD и отчёты SAST/SCA
 - Статический анализ: `bandit -r .` запускается в пайплайне.
 
-Результат:
+Результат:\
 ![alt text](bandit.png)  
 
 - Анализ зависимостей: `safety check -r requirements.txt`.
 
-Результат:
+Результат:\
 ![alt text](safety.png)
