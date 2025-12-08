@@ -26,31 +26,31 @@
 - `posts(id, title, body, owner_id)`
 
 ## Эндпоинты
-- `POST /auth/register` (публичный) — создать пользователя и получить JWT.
-  Пример вызова:
+- `POST /auth/register` (публичный) — создать пользователя и получить JWT.\
+Пример вызова:
 ```
 curl -X POST http://localhost:5000/auth/register \
   -H "Content-Type: application/json" \
   -d '{"username": "Anton", "password": "secret"}'
 ```
 
-- `POST /auth/login` (публичный) — получить JWT.
-  Пример вызова:
+- `POST /auth/login` (публичный) — получить JWT.\
+Пример вызова:
 ```
 curl -X POST http://localhost:5000/auth/login \
   -H "Content-Type: application/json" \
   -d '{"username": "Anton", "password": "secret"}'
 ```
 
-- `GET /api/data` (JWT) — список постов текущего пользователя.  
-  Пример вызова:
+- `GET /api/data` (JWT) — список постов текущего пользователя.\
+Пример вызова:
 ```
 curl -X GET http://localhost:5000/api/data \
   -H "Authorization: Bearer <TOKEN>"
 ```
 
-- `POST /api/data` (JWT) — создать пост.
-  Пример вызова:
+- `POST /api/data` (JWT) — создать пост.\
+Пример вызова:
 ```
 curl -X POST http://localhost:5000/api/data \
   -H "Authorization: Bearer <TOKEN>" \
@@ -68,9 +68,9 @@ curl -X POST http://localhost:5000/api/data \
 - Ограничение доступа: пользовательские ресурсы фильтруются по `owner_id`, то есть получить получится только свои посты; без JWT возвращается `401`.
 
 ## CI/CD и отчёты SAST/SCA
-- Статический анализ: `bandit -r .` запускается в пайплайне.
+- Статический анализ: `bandit -r .` запускается в пайплайне.\
 Результат:
 ![alt text](bandit.png)  
-- Анализ зависимостей: `safety check -r requirements.txt`.
+- Анализ зависимостей: `safety check -r requirements.txt`.\
 Результат:
 ![alt text](safety.png)
