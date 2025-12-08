@@ -72,10 +72,12 @@ curl -X POST http://localhost:5000/api/data \
 - Ограничение доступа: пользовательские ресурсы фильтруются по `owner_id`, то есть получить получится только свои посты; без JWT возвращается `401`.
 
 ## CI/CD и отчёты SAST/SCA
-- Статический анализ: `bandit -r .` запускается в пайплайне.\
+- Статический анализ: `bandit -r .` запускается в пайплайне.
+
 Результат:
 ![alt text](bandit.png)  
 
-- Анализ зависимостей: `safety check -r requirements.txt`.\
+- Анализ зависимостей: `safety check -r requirements.txt`.
+
 Результат:
 ![alt text](safety.png)
