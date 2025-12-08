@@ -26,7 +26,8 @@
 - `posts(id, title, body, owner_id)`
 
 ## Эндпоинты
-- `POST /auth/register` (публичный) — создать пользователя и получить JWT.\
+- `POST /auth/register` (публичный) — создать пользователя и получить JWT.
+
 Пример вызова:
 ```
 curl -X POST http://localhost:5000/auth/register \
@@ -34,7 +35,8 @@ curl -X POST http://localhost:5000/auth/register \
   -d '{"username": "Anton", "password": "secret"}'
 ```
 
-- `POST /auth/login` (публичный) — получить JWT.\
+- `POST /auth/login` (публичный) — получить JWT.
+
 Пример вызова:
 ```
 curl -X POST http://localhost:5000/auth/login \
@@ -42,14 +44,16 @@ curl -X POST http://localhost:5000/auth/login \
   -d '{"username": "Anton", "password": "secret"}'
 ```
 
-- `GET /api/data` (JWT) — список постов текущего пользователя.\
+- `GET /api/data` (JWT) — список постов текущего пользователя.
+
 Пример вызова:
 ```
 curl -X GET http://localhost:5000/api/data \
   -H "Authorization: Bearer <TOKEN>"
 ```
 
-- `POST /api/data` (JWT) — создать пост.\
+- `POST /api/data` (JWT) — создать пост.
+
 Пример вызова:
 ```
 curl -X POST http://localhost:5000/api/data \
@@ -71,6 +75,7 @@ curl -X POST http://localhost:5000/api/data \
 - Статический анализ: `bandit -r .` запускается в пайплайне.\
 Результат:
 ![alt text](bandit.png)  
+
 - Анализ зависимостей: `safety check -r requirements.txt`.\
 Результат:
 ![alt text](safety.png)
