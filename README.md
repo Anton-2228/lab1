@@ -80,3 +80,4 @@ curl -X POST http://localhost:5000/api/data \
 
 Результат:\
 ![alt text](safety.png)
+
